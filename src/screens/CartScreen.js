@@ -33,11 +33,11 @@ const CartScreen = () => {
   return (
     <View style={globalStyles.flexFull}>
       <Header />
-      <Sort />
       {cartContext.showLoader ? (
         <Loader />
       ) : (
         <FlatList
+          ListHeaderComponent={<Sort />}
           style={[globalStyles.flexFull, {backgroundColor: colors.black15}]}
           data={cartContext.productList}
           renderItem={({item}) => <ProductItem data={item} />}
