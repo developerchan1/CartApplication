@@ -1,13 +1,7 @@
+import React from 'react';
 import {getProducts} from '../../services/ApiServices';
 
-const {
-  createContext,
-  useContext,
-  useReducer,
-  useRef,
-  useState,
-  useEffect,
-} = require('react');
+const {createContext, useContext, useState} = require('react');
 
 const CartContext = createContext({});
 
@@ -36,7 +30,6 @@ export const CartProvider = ({children}) => {
   };
 
   const selectOptionDropdown = option => {
-    console.log('option', option);
     setSelectedOption(option);
     setProductList(prev => {
       let result = JSON.parse(JSON.stringify(prev));
@@ -66,12 +59,6 @@ export const CartProvider = ({children}) => {
         newTotalAddedCartItems++;
       }
     }
-    console.log(
-      'newTotalAddedCartItems',
-      newTotalAddedCartItems,
-      'newAddedCartItems',
-      newAddedCartItems,
-    );
     setTotalAddedCartItems(newTotalAddedCartItems);
   };
 
@@ -118,7 +105,6 @@ export const CartProvider = ({children}) => {
     setAddedCartItems({});
     countTotalAddedCartItems({});
     updateProductListQuantity({});
-    setSelectedOption('Default');
   };
 
   return (

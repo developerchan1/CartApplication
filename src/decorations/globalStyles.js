@@ -37,6 +37,15 @@ const globalStyles = StyleSheet.create({
     borderColor: colors.black5,
     borderBottomWidth: 1,
   },
+  sortByContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  sortByIcon: {
+    width: 12,
+    height: 12,
+    marginEnd: 8,
+  },
   sortByText: {
     color: colors.black80,
     fontSize: 16,
@@ -62,6 +71,12 @@ const globalStyles = StyleSheet.create({
     top: 50,
     elevation: 2,
     borderRadius: 8,
+  },
+  dropdownPlaceholderText: {
+    flex: 1,
+    color: colors.black80,
+    fontSize: 14,
+    fontWeight: '700',
   },
   dropdownOption: {
     backgroundColor: colors.white,
@@ -217,6 +232,26 @@ const globalStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '400',
     color: colors.black100,
+  },
+  headerMobileIcon: {
+    width: 18,
+    marginEnd: 22,
+    aspectRatio: 0.6,
+  },
+  loaderMobileIcon: {
+    width: 48,
+    height: 75,
+    marginBottom: 28,
+  },
+  sortIcon: {},
+  chevronIconDown: {
+    width: 18,
+    height: 18,
+  },
+  chevronIconUp: {
+    width: 18,
+    height: 18,
+    transform: [{rotate: '180deg'}],
   },
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 
 import Dropdown from './Dropdown';
 import globalStyles from '../decorations/globalStyles';
@@ -10,8 +10,11 @@ const Sort = () => {
 
   return (
     <View style={globalStyles.sortContainer}>
-      <View>
-        {/* <Image /> */}
+      <View style={globalStyles.sortByContainer}>
+        <Image
+          source={require('../assets/images/sort.png')}
+          style={globalStyles.sortByIcon}
+        />
         <Text style={globalStyles.sortByText}>Sort By:</Text>
       </View>
       <Dropdown

@@ -8,7 +8,10 @@ const Header = () => {
   const totalProducts = cartContext.productList.length;
   return (
     <View style={globalStyles.headerContainer}>
-      {/* <Image /> */}
+      <Image
+        source={require('../assets/images/mobile-light.png')}
+        style={globalStyles.headerMobileIcon}
+      />
       <View>
         <Text style={globalStyles.headerTitle}>Product List</Text>
         {totalProducts > 0 && (

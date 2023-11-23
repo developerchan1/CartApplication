@@ -12,7 +12,6 @@ const Dropdown = ({
   const handlePressDropdown = () => setShowDropdownMenu(!showDropdownMenu);
 
   const handleSelectOption = e => {
-    console.log(e);
     setShowDropdownMenu(false);
     onSelectOption(e);
   };
@@ -22,8 +21,17 @@ const Dropdown = ({
       <Pressable
         onPress={handlePressDropdown}
         style={globalStyles.dropdownContainer}>
-        <Text>{selectedOption}</Text>
-        {/* <Image /> */}
+        <Text style={globalStyles.dropdownPlaceholderText}>
+          {selectedOption}
+        </Text>
+        <Image
+          source={require('../assets/images/chevron.png')}
+          style={
+            showDropdownMenu
+              ? globalStyles.chevronIconUp
+              : globalStyles.chevronIconDown
+          }
+        />
       </Pressable>
       {showDropdownMenu ? (
         <View style={globalStyles.dropdownMenuContainer}>
