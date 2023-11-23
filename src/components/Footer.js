@@ -1,7 +1,8 @@
 import React from 'react';
-import {Pressable, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {useCartContext} from '../context/CartContext';
 import globalStyles from '../decorations/globalStyles';
+import Button from './Button';
 
 const Footer = ({onCheckout}) => {
   const cartContext = useCartContext();
@@ -17,17 +18,24 @@ const Footer = ({onCheckout}) => {
           {cartContext.totalPrice}$
         </Text>
       </View>
-      <Pressable
+      <Button
+        buttonText="Checkout"
         disabled={
           cartContext.totalPrice === 0 && cartContext.totalAddedCartItems === 0
         }
-        onPress={onCheckout}>
-        <Text>Checkout</Text>
-      </Pressable>
+        onPress={onCheckout}
+      />
+
       {cartContext.totalPrice > 0 || cartContext.totalAddedCartItems > 0 ? (
-        <Pressable onPress={handleReset}>
-          <Text>Reset</Text>
-        </Pressable>
+        <>
+          <View style={{height: 12}} />
+          <Button
+            buttonText="Reset"
+            customButtonStyle={globalStyles.buttonGhost}
+            customButtonTextStyle={globalStyles.buttonTextGhost}
+            onPress={handleReset}
+          />
+        </>
       ) : (
         <></>
       )}

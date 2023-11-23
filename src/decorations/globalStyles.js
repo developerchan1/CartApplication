@@ -1,5 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {colors} from './colors';
+
+const {width} = Dimensions.get('screen');
 
 const globalStyles = StyleSheet.create({
   flexFull: {
@@ -119,6 +121,62 @@ const globalStyles = StyleSheet.create({
   totalPriceText: {
     color: colors.black100,
     fontSize: 18,
+    fontWeight: '700',
+  },
+  popupBackdrop: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  popupContainer: {
+    padding: 24,
+    borderRadius: 16,
+    margin: 24,
+    maxWidth: width * 0.8,
+    backgroundColor: 'white',
+    elevation: 5,
+    shadowColor: '#000000',
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    shadowOffset: {width: 0, height: 2},
+  },
+  popupTitle: {
+    marginBottom: 14,
+    color: colors.black100,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  popupContent: {
+    marginBottom: 24,
+    color: colors.black100,
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '400',
+  },
+  button: {
+    backgroundColor: colors.black80,
+    borderRadius: 48,
+    padding: 8,
+  },
+  buttonText: {
+    color: colors.white,
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  buttonGhost: {
+    backgroundColor: colors.white,
+    borderRadius: 48,
+    padding: 8,
+    borderWidth: 2,
+    borderColor: colors.black100,
+  },
+  buttonTextGhost: {
+    color: colors.black100,
+    textAlign: 'center',
+    fontSize: 16,
     fontWeight: '700',
   },
 });

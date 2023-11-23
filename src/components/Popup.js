@@ -1,7 +1,8 @@
-import {Modal, Pressable, Text, View, Dimensions} from 'react-native';
+import React from 'react';
+import {Modal, Text, View} from 'react-native';
 import {useCartContext} from '../context/CartContext';
-
-const {width} = Dimensions.get('screen');
+import globalStyles from '../decorations/globalStyles';
+import Button from './Button';
 
 const Popup = ({visible, onClosePopup}) => {
   const cartContext = useCartContext();
@@ -10,36 +11,16 @@ const Popup = ({visible, onClosePopup}) => {
       animationType="fade"
       transparent={true}
       visible={visible}
-      onRequestClose={onClosePopup}
-      style={{zIndex: 100}}>
-      <View
-        style={{
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flex: 1,
-        }}>
-        <View
-          style={{
-            borderRadius: 16,
-            margin: 24,
-            maxWidth: width * 0.8,
-            backgroundColor: 'white',
-            elevation: 5,
-            shadowColor: '#000000',
-            shadowOpacity: 0.25,
-            shadowRadius: 4,
-            shadowOffset: {width: 0, height: 2},
-          }}>
-          <Text>Success!</Text>
-          <Text>
+      onRequestClose={onClosePopup}>
+      <View style={globalStyles.popupBackdrop}>
+        <View style={globalStyles.popupContainer}>
+          <Text style={globalStyles.popupTitle}>Success!</Text>
+          <Text style={globalStyles.popupContent}>
             You have successfully purchase {cartContext.totalAddedCartItems}{' '}
             products with total of {cartContext.totalPrice}$. Click close to buy
             another modems
           </Text>
-          <Pressable onPress={onClosePopup}>
-            <Text>Close</Text>
-          </Pressable>
+          <Button buttonText="Close" onPress={onClosePopup} />
         </View>
       </View>
     </Modal>
