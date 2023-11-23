@@ -7,7 +7,7 @@ const ProductItem = ({data}) => {
   const {id, title, price, stock, quantity} = data;
   return (
     <View style={globalStyles.productItemContainer}>
-      <View style={globalStyles.flexFull}>
+      <View style={[globalStyles.flexFull, {marginRight: 8}]}>
         <Text style={globalStyles.productItemName}>{title}</Text>
         <Text style={globalStyles.productItemPrice}>${price}</Text>
       </View>

@@ -13,13 +13,18 @@ const Footer = ({onCheckout}) => {
   return (
     <View style={globalStyles.footerContainer}>
       <View style={globalStyles.totalPriceContainer}>
-        <Text style={globalStyles.totalPriceText}>Total</Text>
+        <Text style={globalStyles.totalPriceText}>Total:</Text>
         <Text style={globalStyles.totalPriceText}>
           {cartContext.totalPrice}$
         </Text>
       </View>
       <Button
         buttonText="Checkout"
+        customButtonStyle={
+          cartContext.totalPrice === 0 && cartContext.totalAddedCartItems === 0
+            ? globalStyles.buttonDisabled
+            : globalStyles.button
+        }
         disabled={
           cartContext.totalPrice === 0 && cartContext.totalAddedCartItems === 0
         }

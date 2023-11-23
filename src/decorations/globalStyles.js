@@ -160,6 +160,11 @@ const globalStyles = StyleSheet.create({
     borderRadius: 48,
     padding: 8,
   },
+  buttonDisabled: {
+    backgroundColor: colors.black20,
+    borderRadius: 48,
+    padding: 8,
+  },
   buttonText: {
     color: colors.white,
     textAlign: 'center',
@@ -178,6 +183,40 @@ const globalStyles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '700',
+  },
+  qtyContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '50%',
+    padding: 8,
+    backgroundColor: colors.black10,
+    borderWidth: 1,
+    borderColor: colors.black5,
+    borderRadius: 8,
+  },
+  qtyButton: {
+    backgroundColor: colors.black80,
+    borderRadius: 4,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+  },
+  qtyButtonDisable: {
+    backgroundColor: colors.black20,
+    borderRadius: 4,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+  },
+  qtyButtonText: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: colors.white,
+  },
+  qtyText: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '400',
+    color: colors.black100,
   },
 });
 
