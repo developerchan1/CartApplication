@@ -15,7 +15,7 @@ const Footer = ({onCheckout}) => {
       <View style={globalStyles.totalPriceContainer}>
         <Text style={globalStyles.totalPriceText}>Total:</Text>
         <Text style={globalStyles.totalPriceText}>
-          {cartContext.totalPrice}$
+          ${cartContext.totalPrice}
         </Text>
       </View>
       <Button

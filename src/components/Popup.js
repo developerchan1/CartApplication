@@ -17,7 +17,7 @@ const Popup = ({visible, onClosePopup}) => {
           <Text style={globalStyles.popupTitle}>Success!</Text>
           <Text style={globalStyles.popupContent}>
             You have successfully purchase {cartContext.totalAddedCartItems}{' '}
-            products with total of {cartContext.totalPrice}$. Click close to buy
+            products with total of ${cartContext.totalPrice}. Click close to buy
             another modems
           </Text>
           <Button buttonText="Close" onPress={onClosePopup} />
