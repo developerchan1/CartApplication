@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 
 import Header from '../components/Header';
 import Sort from '../components/Sort';
@@ -11,6 +11,7 @@ import Popup from '../components/Popup';
 import {useCartContext} from '../context/CartContext';
 import globalStyles from '../decorations/globalStyles';
 import {colors} from '../decorations/colors';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const CartScreen = () => {
   const cartContext = useCartContext();
@@ -31,21 +32,23 @@ const CartScreen = () => {
   };
 
   return (
-    <View style={globalStyles.flexFull}>
+    <GestureHandlerRootView style={globalStyles.flexFull}>
       <Header />
       {cartContext.showLoader ? (
         <Loader />
       ) : (
-        <FlatList
-          ListHeaderComponent={<Sort />}
-          style={[globalStyles.flexFull, {backgroundColor: colors.black15}]}
-          data={cartContext.productList}
-          renderItem={({item}) => <ProductItem data={item} />}
-        />
+        <>
+          <Sort />
+          <FlatList
+            style={[globalStyles.flexFull, {backgroundColor: colors.black15}]}
+            data={cartContext.productList}
+            renderItem={({item}) => <ProductItem data={item} />}
+          />
+        </>
       )}
       <Footer onCheckout={handleCheckout} />
       <Popup visible={checkoutModalVisible} onClosePopup={handleClosePopup} />
-    </View>
+    </GestureHandlerRootView>
   );
 };
 

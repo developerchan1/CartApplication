@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image, Pressable, Text, View} from 'react-native';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import globalStyles from '../decorations/globalStyles';
 
 const Dropdown = ({
@@ -36,12 +37,12 @@ const Dropdown = ({
       {showDropdownMenu ? (
         <View style={globalStyles.dropdownMenuContainer}>
           {listOptions.map(e => (
-            <Pressable
+            <TouchableWithoutFeedback
               key={e}
               style={globalStyles.dropdownOption}
               onPress={() => handleSelectOption(e)}>
               <Text style={globalStyles.dropdownText}>{e}</Text>
-            </Pressable>
+            </TouchableWithoutFeedback>
           ))}
         </View>
       ) : (

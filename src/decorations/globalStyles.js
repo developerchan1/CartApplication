@@ -36,6 +36,7 @@ const globalStyles = StyleSheet.create({
     paddingBottom: 23,
     borderColor: colors.black5,
     borderBottomWidth: 1,
+    zIndex: 1,
   },
   sortByContainer: {
     flexDirection: 'row',
@@ -67,7 +68,6 @@ const globalStyles = StyleSheet.create({
   dropdownMenuContainer: {
     width: '100%',
     position: 'absolute',
-    zIndex: 100,
     top: 50,
     elevation: 2,
     borderRadius: 8,
